@@ -23,12 +23,13 @@
 
 ## Project Repository
 
-|      Repository Name       |        Description         |                                         Link                                          |
-| :------------------------: | :------------------------: | :-----------------------------------------------------------------------------------: |
-|          EPAS APP          |      Flutter EPAS App      |                [EPAS APP](https://github.com/Ajou-Soft-19/service-app)                |
-|    EPAS Service server     |    EPAS Backend Server     |         [EPAS Service server](https://github.com/Ajou-Soft-19/service-server)         |
-|     EPAS Socket server     |     EPAS Socket Server     |      [EPAS Socket server](https://github.com/Ajou-Soft-19/spring-socket-server)       |
-| EPAS Authentication server | EPAS Authentication Server | [EPAS Authentication server](https://github.com/Ajou-Soft-19/Spring-JWT-Login-server) |
+|       Repository Name        |         Description          |                                         Link                                          |
+| :--------------------------: | :--------------------------: | :-----------------------------------------------------------------------------------: |
+|           EPAS APP           |       Flutter EPAS App       |                [EPAS APP](https://github.com/Ajou-Soft-19/service-app)                |
+|     EPAS Service server      |     EPAS Backend Server      |         [EPAS Service server](https://github.com/Ajou-Soft-19/service-server)         |
+| EPAS Vehicle Tracking Server | EPAS Vehicle Tracking Server | [EPAS Vehicle Tracking Server ](https://github.com/Ajou-Soft-19/spring-socket-server) |
+|  EPAS Authentication server  |  EPAS Authentication Server  | [EPAS Authentication server](https://github.com/Ajou-Soft-19/Spring-JWT-Login-server) |
+|        EPAS Simulator        | EPAS Road Network Simulator  |           [EPAS Simulator](https://github.com/Ajou-Soft-19/road-simulator)            |
 
 ## Team Ajou Moses
 
