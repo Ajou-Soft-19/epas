@@ -6,6 +6,8 @@
 
 백엔드 서버는 다음과 같은 기술 스택을 사용합니다. WAS는 Spring Boot를 사용하고, DB는 PostgrSQL와 Redis를 사용합니다. 또한, 서버 간 통신을 위해 REST API와 Redis Pub/Sub을 사용합니다.
 
+각 서버 컴포넌트는 도커를 사용하여 빌드하고 배포합니다.
+
 ## 데이터베이스
 
 |              PostgreSQL ERD               |
@@ -104,7 +106,7 @@
 |     API Name     | Method | URL                    | Description                                                         |
 | :--------------: | :----: | ---------------------- | ------------------------------------------------------------------- |
 |      socket      |  wss   | /ws/my-location        | 소켓 통신을 통해 차량의 위치 정보나 경고 메시지 등을 주고 받습니다. |
-| emergency sockey |  wss   | /ws/emergency-location | 응급차량을 위한 소켓 통신 API 입니다.                               |
+| emergency socket |  wss   | /ws/emergency-location | 응급차량을 위한 소켓 통신 API 입니다.                               |
 
 **소켓 통신 클라이언트 메시지 타입**
 
