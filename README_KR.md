@@ -1,5 +1,21 @@
 # [EPAS (Emergency vehicle Pre-Alerting System)]
 
+- [[EPAS (Emergency vehicle Pre-Alerting System)]](#epas-emergency-vehicle-pre-alerting-system)
+  - [프로젝트 소개](#프로젝트-소개)
+  - [Team Ajou Moses](#team-ajou-moses)
+  - [🛠️ Tech Stack 🛠️](#-tech-stack-)
+  - [🧰 Development Tools 🧰](#-development-tools-)
+  - [API Used](#api-used)
+- [알고리즘](#알고리즘)
+  - [맵 매칭 알고리즘](#맵-매칭-알고리즘)
+  - [경고 대상 선정 알고리즘](#경고-대상-선정-알고리즘)
+  - [경고 메시지 타입](#경고-메시지-타입)
+- [백엔드 서버 스택](#백엔드-서버-스택)
+  - [데이터베이스](#데이터베이스)
+  - [OSRM (Open Source Routing Machine)](#osrm-open-source-routing-machine)
+  - [Spring boot server](#spring-boot-server)
+- [프론트엔드 스택](#프론트엔드-스택)
+
 ## 프로젝트 소개
 
 - EPAS는 차량 주행자가 응급 차량의 접근을 미리 알 수 있도록, 경고 알림을 제공하는 서비스입니다.
@@ -19,6 +35,7 @@
     <img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
     <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white">
     <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white">
+    <br>
     <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white">
     <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white">
 </div>
@@ -32,6 +49,7 @@
     <img src="https://img.shields.io/badge/Notion-ffffff?style=for-the-badge&logo=notion&logoColor=black">
     <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white">
     <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white">
+    <br>
     <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white">
     <img src="https://img.shields.io/badge/GoogleCloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white">
     <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
@@ -347,3 +365,7 @@ def issue_alert(emergency_car, checkpoints, vehicles):
 |    ALERT     | 경고 메시지를 전송합니다. 응급차량의 정보가 포함됩니다.                                                                              |
 | ALERT_UPDATE | 경고 메시지를 업데이트합니다.                                                                                                        |
 |  ALERT_END   | 경고 메시지 종료를 알립니다.                                                                                                         |
+
+# 프론트엔드 스택
+
+프론트엔드는 Flutter를 이용해 구현하였습니다. 내용이 길어져 프론트엔드에 대한 자세한 설명은 [여기](https://github.com/Ajou-Soft-19/service-app)를 참고해주세요.

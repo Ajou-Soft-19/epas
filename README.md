@@ -1,10 +1,34 @@
 # [EPAS (Emergency vehicle Pre-Alerting System)]
 
+- [[EPAS (Emergency vehicle Pre-Alerting System)]](#epas-emergency-vehicle-pre-alerting-system)
+  - [Project Introduction](#project-introduction)
+  - [Project Repository](#project-repository)
+  - [Team Ajou Moses](#team-ajou-moses)
+  - [🛠️ Tech Stack 🛠️](#-tech-stack-)
+  - [🧰 Development Tools 🧰](#-development-tools-)
+  - [API Used](#api-used)
+  - [Map Matching Algorithm](#map-matching-algorithm)
+  - [Alerting Target Selection Algorithm](#alerting-target-selection-algorithm)
+- [Backend Server Stack](#backend-server-stack)
+  - [Database](#database)
+  - [OSRM (Open Source Routing Machine)](#osrm-open-source-routing-machine)
+  - [Spring boot server](#spring-boot-server)
+- [Frontend Stack](#frontend-stack)
+
 ## Project Introduction
 
 - EPAS is a social infrastructure service that provides warning notifications to vehicle drivers so they can be aware of the approach of emergency vehicles in advance.
 - The service provides warning notifications by considering the distance, speed, and direction of emergency and surrounding vehicles through a filtering algorithm.
 - Through these warning notifications, vehicle drivers can yield the road to emergency vehicles without panic, and emergency vehicles can reach their destinations quickly.
+
+## Project Repository
+
+|      Repository Name       |        Description         |                                         Link                                          |
+| :------------------------: | :------------------------: | :-----------------------------------------------------------------------------------: |
+|          EPAS APP          |      Flutter EPAS App      |                [EPAS APP](https://github.com/Ajou-Soft-19/service-app)                |
+|    EPAS Service server     |    EPAS Backend Server     |         [EPAS Service server](https://github.com/Ajou-Soft-19/service-server)         |
+|     EPAS Socket server     |     EPAS Socket Server     |      [EPAS Socket server](https://github.com/Ajou-Soft-19/spring-socket-server)       |
+| EPAS Authentication server | EPAS Authentication Server | [EPAS Authentication server](https://github.com/Ajou-Soft-19/Spring-JWT-Login-server) |
 
 ## Team Ajou Moses
 
@@ -19,6 +43,7 @@
     <img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
     <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white">
     <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white">
+    <br>
     <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white">
     <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white">
 </div>
@@ -32,6 +57,7 @@
     <img src="https://img.shields.io/badge/Notion-ffffff?style=for-the-badge&logo=notion&logoColor=black">
     <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white">
     <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white">
+    <br>
     <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white">
     <img src="https://img.shields.io/badge/GoogleCloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white">
     <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
@@ -346,3 +372,7 @@ The server communicates messages with the client through socket communication.
 |    ALERT     | Sends an alert message. Includes information about the emergency vehicle.                                                                        |
 | ALERT_UPDATE | Updates the alert message.                                                                                                                       |
 |  ALERT_END   | Notifies the end of the alert message.                                                                                                           |
+
+# Frontend Stack
+
+The frontend was implemented using Flutter. Due to the length of the content, for a detailed explanation about the frontend, please refer to [here](https://github.com/Ajou-Soft-19/service-app).
