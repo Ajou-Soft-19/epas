@@ -53,9 +53,9 @@ We use GPS data to track the location of a vehicle in real time. However, GPS da
 
 Below are comparison images before and after using map matching.
 
-|                      Before Map Matching                      |                     After Map Matching                      |
-| :-----------------------------------------------------------: | :---------------------------------------------------------: |
-| ![Before Map Matching](../img/algorithm/before_map_match.jpg) | ![After Map Matching](../img/algorithm/after_map_match.jpg) |
+|                     Before Map Matching                      |                     After Map Matching                     |
+| :----------------------------------------------------------: | :--------------------------------------------------------: |
+| ![Before Map Matching](./img/algorithm/before_map_match.jpg) | ![After Map Matching](./img/algorithm/after_map_match.jpg) |
 
 This allows us to accurately determine which checkpoint the emergency vehicle is passing through, which road it is passing through, etc. Using the location and azimuth on the road network obtained here, we select the target for the alert and send the alert message.
 
