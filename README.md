@@ -1,10 +1,10 @@
 # [EPAS (Emergency vehicle Pre-Alerting System)]
 
-## 프로젝트 소개
+## Project Introduction
 
-- EPAS는 차량 주행자가 응급차량의 접근을 미리 알 수 있습니다.
-- 응급차량은 응급상황에서 보다 쉽고 빠르게 목적지에 도달할 수 있습니다.
-- 주행자는 응급차량의 접근을 보고 받아 사고 위험없이 미리 길을 터줄 수 있습니다.
+- EPAS is a social infrastructure service that provides warning notifications to vehicle drivers so they can be aware of the approach of emergency vehicles in advance.
+- The service provides warning notifications by considering the distance, speed, and direction of emergency and surrounding vehicles through a filtering algorithm.
+- Through these warning notifications, vehicle drivers can yield the road to emergency vehicles without panic, and emergency vehicles can reach their destinations quickly.
 
 ## Team Ajou Moses
 
@@ -37,7 +37,7 @@
     <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
 </div>
 
-## 2. API Used
+## API Used
 
 <div align="center">
     <img src="https://img.shields.io/badge/GoogleMapsAPI-4285F4?style=for-the-badge&logo=googlemaps&logoColor=white">
@@ -47,91 +47,302 @@
 
 <br>
 
-## 3. 페이지별 기능
+## Map Matching Algorithm
 
-### 3-1. 회원가입 화면
+We use GPS data to track the location of a vehicle in real time. However, GPS data may differ from the actual location. To correct this, we use a map matching algorithm. The map matching algorithm converts GPS data to a location on the actual road network.
 
-| 계정 생성 초기 화면                         | 계정 생성 폼                         | 계정 생성 버튼 클릭                        |
-| ------------------------------------------- | ------------------------------------ | ------------------------------------------ |
-| ![계정 생성 초기 화면 ](img/4/signup1.jpeg) | ![계정 생성 폼 ](img/4/signup2.jpeg) | ![계정 생성 버튼 클릭](img/4/signup3.jpeg) |
+Below are comparison images before and after using map matching.
 
-### 3-2. 로그인 화면
+|                      Before Map Matching                      |                     After Map Matching                      |
+| :-----------------------------------------------------------: | :---------------------------------------------------------: |
+| ![Before Map Matching](../img/algorithm/before_map_match.jpg) | ![After Map Matching](../img/algorithm/after_map_match.jpg) |
 
-| 로그인 초기 화면                        | 로그인 폼                        | 로그인 성공                        |
-| --------------------------------------- | -------------------------------- | ---------------------------------- |
-| ![로그인 초기 화면 ](img/4/login1.jpeg) | ![로그인 폼 ](img/4/login2.jpeg) | ![로그인 성공](img/4/account.jpeg) |
+This allows us to accurately determine which checkpoint the emergency vehicle is passing through, which road it is passing through, etc. Using the location and azimuth on the road network obtained here, we select the target for the alert and send the alert message.
 
-### 3-3. Map 화면
+## Alerting Target Selection Algorithm
 
-| Map 화면                                         |
-| ------------------------------------------------ |
-| <img src="img/4/navigation1.jpeg" width="200" /> |
+The biggest technical problem we faced was deciding the standard for issuing alert notifications and how to deliver them. If the distance from the emergency vehicle is simply used as the criterion, many unnecessary alerts may be received because the distance from the emergency vehicle is close, even though it is far on the road network, which can degrade the user experience. To solve this problem, we selected the following algorithm.
 
-### 3-4. 네비게이션 화면
+When an emergency vehicle activates an emergency situation, the backend server continuously monitors the emergency vehicle (approximately every 1 second) and sends alerts to vehicles that are expected to encounter the emergency vehicle.
 
-| 네비게이션 초기 화면                             | 네비게이션 목적지 검색                           | 찾은 경로 보여줌                           | 네비게이션 시작                            |
-| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| ![네비게이션 초기 화면 ](img/4/navigation1.jpeg) | ![네비게이션 경로 검색 ](img/4/navigation2.jpeg) | ![네비게이션 시작](img/4/navigation3.jpeg) | ![네비게이션 시작](img/4/navigation4.jpeg) |
+### **Alerting Target Selection Algorithm Sudo Code**
 
-### 3-5. Account 화면
+```c
+def issue_alert(emergency_car, checkpoints, vehicles):
+  current_location = emergency_car.current_location
+  next_checkpoint = get_next_checkpoint(current_location, checkpoints)
 
-| Account 메인 화면                            | 사용자 이름 변경                              | 사용자 이름 변경 완료                         | 응급차량 권한 요청                            | 응급차량 권한 요청 승인 결과 확인             |
-| -------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| <img src="img/4/account1.jpeg" width="200"/> | <img src="img/4/account2.jpeg" width="200" /> | <img src="img/4/account3.jpeg" width="200" /> | <img src="img/4/account4.jpeg" width="200" /> | <img src="img/4/account5.jpeg" width="200" /> |
+  # 1. Get vehicles within 500m radius of the next checkpoint
+  nearby_vehicles = get_nearby_vehicles(next_checkpoint, vehicles, 500)
 
-### 3-6. 차량 등록 화면
+  # 2. Issue alert to vehicles using navigation
+  for vehicle in nearby_vehicles:
+    if vehicle.is_using_navigation:
+      emergency_info = get_emergency_info(emergency_car)
+      send_alert(vehicle, emergency_info)
 
-| 차량 등록 초기 화면                             | 차량 추가 화면                            | 차량 추가 완료                            |
-| ----------------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-| ![차량 등록 초기 화면 ](img/4/addVehicle1.jpeg) | ![차량 추가 화면](img/4/addVehicle2.jpeg) | ![차량 추가 완료](img/4/addVehicle3.jpeg) |
+  # 3. Issue alert to vehicles not using navigation but predicted to reach the checkpoint around the same time
+  for vehicle in nearby_vehicles:
+    if not vehicle.is_using_navigation:
+      if will_arrive_simultaneously(vehicle, emergency_car, next_checkpoint):
+        emergency_info = get_emergency_info(emergency_car)
+        send_alert(vehicle, emergency_info)
 
-### 3-7. 응급차량 응급 모드
+  # 4. Issue additional alert to vehicles very close to the emergency vehicle
+  very_close_vehicles = get_nearby_vehicles(current_location, vehicles, 160)
+  for vehicle in very_close_vehicles:
+    emergency_info = get_emergency_info(emergency_car)
+    send_alert(vehicle, emergency_info)
+```
 
-| 응급차량 응급모드                 | 응급차량 일반모드                 | 응급차량 응급상황 주행시작        |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| <img src="img/4/emergency1.jpeg"> | <img src="img/4/emergency2.jpeg"> | <img src="img/4/emergency3.jpeg"> |
+The above code is the pseudocode of the alert target selection algorithm we selected.
 
-### 3-8. 경고 알람 발생 화면
+The vehicle query range, checkpoint interval, etc. were determined after testing various scenarios through the simulation we created. [Road Network Simulation Tool](https://github.com/Ajou-Soft-19/road-simulator)
 
-| 경고 알람 발생 화면                        |
-| ------------------------------------------ |
-| <img src="img/4/alert1.png" width="200" /> |
+**[Vehicle Monitoring]**
 
-### 3-9. Admin 화면
+|                                                Vehicle Monitoring                                                |
+| :--------------------------------------------------------------------------------------------------------------: |
+| ![vehicle_status.jpg](https://github.com/Ajou-Soft-19/epas/assets/32717522/d5e4424f-bc26-43f3-95c9-fb3693e7ad1f) |
 
-| 관리자 Account 화면                 | 모니터링 페이지              |
-| ----------------------------------- | ---------------------------- |
-| <img src="img/4/adminAccount.jpeg"> | <img src="img/4/admin3.png"> |
+When a user runs the navigation app, the vehicle tracking server monitors the vehicle's location, speed, and azimuth. At this time, the user's information is stored as anonymous information.
 
-### 3-10. 권한 관리 화면
+|                                         Emergency Vehicle Navigation Path                                         |                                      Emergency Vehicle Navigation Checkpoint                                      |
+| :---------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
+| <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/addea671-3a1f-421c-ba28-a1c723cf2e50" width="500"> | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/93a2f2a4-6e6c-4f85-b9f4-1f90fc096e71" width="400"> |
 
-| 응급차량 권한 요청 승인/거절 페이지 |
-| ----------------------------------- |
-| <img src="img/4/admin2.png">        |
+1. The expected driving route of the emergency vehicle is divided into checkpoints at intervals of about 400m, and the next checkpoint that the emergency vehicle is currently heading to is selected as the alert target.
 
----
+|                                              Alert Target Selection                                               |
+| :---------------------------------------------------------------------------------------------------------------: |
+| <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/de23df98-adfa-4580-8f65-b9d674ef36d8" width="500"> |
 
-## 4. 알고리즘
+2. Find `vehicles within a 500m radius` of the next checkpoint using the spatial query of `PostGIS`. (The blue circle in the picture above represents a 500m radius.)
 
-### 4-1. ERD
+3. For vehicles using navigation, an alert message containing the current location and expected route information of the emergency vehicle is sent via a socket. Each navigation application compares the set navigation driving route with the emergency vehicle's route and displays an alert notification to the user if they intersect.
 
-![ERD](img/algorithm/ERD.png)
+|                                            Alert Message Transmission                                             |
+| :---------------------------------------------------------------------------------------------------------------: |
+| <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/e7ae7c75-944a-44da-b45d-8e6156a4762d" width="500"> |
 
-### 4-2. Alert Logic
+4. For vehicles not using navigation, considering the current location and direction of the vehicle, **an alert is issued if it is expected to arrive at the next checkpoint faster than the emergency vehicle or at a similar time**. (Calculated on the road network using OSRM's table api.)
+   The red dot represents the emergency vehicle, the blue dot represents the general vehicle, and the black dot represents the vehicle that received the alert.
 
-| 응급차량 현재 위치 기준 차량 필터링 예시             | 응급차량 다음 포인트 기준 차량 필터링 예시           |
-| ---------------------------------------------------- | ---------------------------------------------------- |
-| <img src="img/algorithm/Filtering1.png" width="200"> | <img src="img/algorithm/Filtering2.png" width="200"> |
+|                       Filtering Alert Targets Far Away                        |
+| :---------------------------------------------------------------------------: |
+| ![Filtering Warning Targets Far Away](/img/algorithm/algorithm_example_1.gif) |
 
-- 응급차량의 주행 경로를 400m 간격으로 나우어 체크포린트로 저장
-- 응급차량 현재 위치 기준 160m 내에 위치한 차량 필터링 (모니터링 페이지 기준 빨간색 원)
-- 응급차량 다음 이동 경로 포인트 반경 500m 내에 위치한 차량 필터링 (모니터링 페이지 기준 파란색 원)
-- 필터링된 차량들에게 경고 알람 전송
-  - 네비게이션 사용하는 차량:
-    - 응급차량의 예상 경로와 현재 위치 정보를 담은 경보 메시지를 전달
-  - 네비게이션 사용하지 않는 차량:
-    - 주행 차량의 현재 위치와 이동 방향을 고려하여 다음 체크포인트에 응급차량보다 빠르게 도착하거나 비슷한 시간에 도착할 것으로 예상되는 경우 경고 발생
+Vehicles that are close to the emergency vehicle in a straight line distance but far away on the road network are excluded from the warning targets.
 
-### 4-3. Map Matching Logic
+5. In addition, to ensure that alerts are delivered to vehicles very close to the emergency vehicle, an additional alert is issued to `vehicles within 160m of the emergency vehicle` on the road network, regardless of the direction of movement. (The red circle corresponds to this.)
 
-### 4-4. Front Alert Logic
+|                                         Alert Screen on Ordinary Vehicle 1                                         | Alert Screen on Ordinary Vehicle 2                                                                                 |
+| :----------------------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------------------ |
+| <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/cbf3a24f-202b-412e-86ba-0cdc08adc0e5" height="500"> | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/d7fcf378-b9f3-4d6a-b787-84ebc3022db5" height="500"> |
+
+The issued alert contains information such as the current location of the emergency vehicle, the license number, and the expected driving route to the next checkpoint. This allows the navigation app to visualize the direction of approach and expected route of the emergency vehicle. The current location of the emergency vehicle is continuously transmitted after receiving the alert for 40 seconds. Users can check and respond to the location of the emergency vehicle in real time based on this information.
+
+### Alert Message Type
+
+Alert messages are sent through a socket connected to a regular vehicle. You can handle the emergency vehicle route through the emergency vehicle's API handler. Below are each message type.
+
+**[ALERT]**
+
+```json
+{
+  "code": 200,
+  "messageType": "ALERT",
+  "data": {
+    "emergencyEventId": 410,
+    "checkPointId": 16,
+    "licenseNumber": "947Y1201",
+    "vehicleType": "FIRE_TRUCK_MEDIUM",
+    "currentPathPoint": 12,
+    "pathPoints": [
+      {
+        "index": 3,
+        "location": [
+          127.10739,
+          37.342598
+        ]
+      },
+      {
+        "index": 4,
+        "location": [
+          127.108576,
+          37.342592
+        ]
+      },
+      ...
+      {
+        "index": 33,
+        "location": [
+          127.116302,
+          37.346454
+        ]
+      }
+    ]
+  }
+}
+```
+
+- This is the message type sent when an alert is first issued. It sends emergency vehicle and expected route information. Route information includes from the current location of the emergency vehicle to the next checkpoint.
+- If there are multiple emergency vehicles, the front distinguishes and processes using `licenseNumber` and `emergencyEventId`.
+
+**[ALERT_UPDATE]**
+
+```json
+{
+  "code": 200,
+  "messageType": "ALERT_UPDATE",
+  "data": {
+    "licenseNumber": "947Y1201",
+    "longitude": 127.109039,
+    "latitude": 37.343817
+  }
+}
+```
+
+- For vehicles that have received alerts, the location of the emergency vehicle is updated in real time for about 40 seconds. EPAS app displays the real-time location of the emergency vehicle to the user using this information.
+
+**[ALERT_END]**
+
+```json
+{
+  "code": 200,
+  "messageType": "ALERT_END",
+  "data": {
+    "licenseNumber": "947Y1201"
+  }
+}
+```
+
+- When the alert to be sent to the alert target is terminated, the above message is sent.
+
+# Backend Server Stack
+
+|                   Server Stack                   |
+| :----------------------------------------------: |
+| ![Server Stack](/img/algorithm/server_stack.png) |
+
+The backend server uses the following technology stack. The WAS is Spring Boot, and the DB uses PostgreSQL and Redis. Also, REST API and Redis Pub/Sub are used for communication between servers.
+
+Each server components are build by using Docker and deployed.
+
+## Database
+
+|              PostgreSQL ERD               |
+| :---------------------------------------: |
+| ![PostgreSQL ERD](/img/algorithm/ERD.png) |
+
+The core database uses PostgreSQL. The most important tables are as follows:
+
+|   Table Name    |                                                                   Description                                                                    |
+| :-------------: | :----------------------------------------------------------------------------------------------------------------------------------------------: |
+|     member      |                                                             Stores user information.                                                             |
+|     vehicle     |                      Stores user vehicle information such as the registration number, type of vehicle, and vehicle number.                       |
+| vehicle_status  | Stores the location, speed, and azimuth of the user's vehicle. Supports location-based searches through Postgis' spatial data type and indexing. |
+| navigation_path |                                                  Stores information on the user's route search.                                                  |
+|   check_point   |                                          Stores checkpoint information when an emergency is registered.                                          |
+| emergency_event |                             Stores information on registered emergencies. Used for emergency management and logging.                             |
+|  alert_record   |                                       Stores alert notification information sent when an emergency occurs.                                       |
+
+## OSRM (Open Source Routing Machine)
+
+Due to the nature of the service, there are many calculations on the road network and the route search API. As a result, it is expensive to use commercial route search APIs such as Naver or Kakao. Therefore, we provide a route search service using OSRM. [OSRM](https://project-osrm.org/) builds a road network based on OpenStreetMap data and provides a route search service based on it.
+
+Fortunately, we were able to use road data from Korea, and based on this, we were able to create an emergency vehicle alert service.
+
+| Used API |               Description               |
+| :------: | :-------------------------------------: |
+|  route   |            Route search API             |
+|  match   |   Map matching API based on GPS data    |
+|  table   | Matrix route search and calculation API |
+
+## Spring boot server
+
+There are a total of 3 WAS configured with Spring Boot. Each server has the following roles:
+
+|       Server Name       |                                                                                                    Description                                                                                                     |
+| :---------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|  Authentication Server  |                                                                                   Manages user authentication and authorization.                                                                                   |
+|   Main Service Server   |                                                  Manages vehicle registration, route search API, emergency management, and calculation of alert issuance targets.                                                  |
+| Vehicle Tracking Server | Monitors vehicle information in real time. Updates the location, speed, azimuth, etc. of the vehicle in real time, maps the location of the vehicle to the road through map matching, and delivers it to the user. |
+
+### Authentication Server
+
+Manages user authentication and authorization. It provides features such as login, sign-up, password recovery, and user information modification. Also, it stores user authentication information and provides authentication and authorization features by issuing JWT to authenticated users.
+
+To access other services, you must send a request with the JWT issued by the Authentication Server in the header. This ensures user authentication and authorization.
+
+For more details, please refer to [Authentication Server](https://github.com/Ajou-Soft-19/Spring-JWT-Login-server).
+
+### Main Service Server
+
+Manages vehicle registration, route search API, emergency management, and calculation of alert issuance targets. It calls the route search API according to the user's request, calculates the route of the emergency vehicle when an emergency occurs, and delivers it to the emergency vehicle. Also, it continuously tracks the emergency vehicle using the location of the emergency vehicle and the navigation route, and sends alert messages to nearby vehicles.
+
+The main APIs provided are as follows:
+
+**Route Search API**
+| API Name | Method | URL | Description |
+| :------: | :----: | --- | ----------- |
+| route | POST | /api/navi/route | Provides a route based on OSRM. |
+| emergency route | POST | /api/emergency/navi/route | Provides an emergency route based on OSRM. |
+| get path | GET | /api/emergency/navi/path | Returns the saved route. |
+| remove path | POST | /api/emergency/navi/path/remove | Removes the route. |
+
+**Emergency Management API**
+
+|         API Name         | Method | URL                           | Description                     |
+| :----------------------: | :----: | ----------------------------- | ------------------------------- |
+| register emergency event |  POST  | /api/emergency/event/register | Registers an emergency.         |
+|   end emergency event    |  POST  | /api/emergency/event/end      | Ends an emergency.              |
+|   get emergency event    |  GET   | /api/emergency/event          | Returns registered emergencies. |
+
+Here is the English version of the provided description.
+
+**Alert Target Calculation API**
+
+```java
+    @Bean
+    public ChannelTopic alertBroadcast() {
+        return new ChannelTopic("alertBroadcast");
+    }
+
+    @Bean
+    public ChannelTopic updateCurrentPathPoint() {
+        return new ChannelTopic("updateCurrentPathPoint");
+    }
+```
+
+- Implements alert target calculation and alert message transmission using Redis Pub/Sub.
+- The server receives updates on the current location of the emergency vehicle from the vehicle location tracking server through the `updateCurrentPathPoint` channel and calculates the alert targets. The server sends an alert message to the vehicle location tracking server via the `alertBroadcast` channel to deliver the alert message to the vehicles that become alert targets.
+
+### Vehicle Tracking Server
+
+The server monitors vehicle information in real time. It updates the location, speed, azimuth, etc. of the vehicle in real time, maps the location of the vehicle to the road through map matching, and delivers it to the user.
+
+The server communicates messages with the client through socket communication.
+
+**Socket Communication API**
+
+|     API Name     | Method | URL                    | Description                                                                                      |
+| :--------------: | :----: | ---------------------- | ------------------------------------------------------------------------------------------------ |
+|      socket      |  wss   | /ws/my-location        | Communicates location information of the vehicle, alert messages, etc. via socket communication. |
+| emergency socket |  wss   | /ws/emergency-location | Socket communication API for emergency vehicles.                                                 |
+
+**Client Message Type for Socket Communication**
+
+| Message Type | Description                                                |
+| :----------: | ---------------------------------------------------------- |
+|     INIT     | Sets initial data when socket connection is made.          |
+|    UPDATE    | Updates the location, speed, azimuth, etc. of the vehicle. |
+
+**Server Message Type for Socket Communication**
+
+| Message Type | Description                                                                                                                                      |
+| :----------: | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+|   RESPONSE   | When the client sends an UPDATE message, the server sends a RESPONSE message to the client. The RESPONSE sends map-matched location information. |
+|    ALERT     | Sends an alert message. Includes information about the emergency vehicle.                                                                        |
+| ALERT_UPDATE | Updates the alert message.                                                                                                                       |
+|  ALERT_END   | Notifies the end of the alert message.                                                                                                           |
