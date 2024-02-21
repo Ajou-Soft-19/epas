@@ -1,5 +1,7 @@
 # [EPAS (Emergency vehicle Pre-Alerting System)]
 
+Korean version Documentation: [한국어](./README_kr.md)
+
 - [[EPAS (Emergency vehicle Pre-Alerting System)]](#epas-emergency-vehicle-pre-alerting-system)
   - [Project Introduction](#project-introduction)
   - [Project Repository](#project-repository)
@@ -10,6 +12,7 @@
 - [Algorithm](#algorithm)
   - [Map Matching Algorithm](#map-matching-algorithm)
   - [Alerting Target Selection Algorithm](#alerting-target-selection-algorithm)
+- [Simulation Test Method](#simulation-test-method)
 - [EPAS APP](#frontend-epas-app)
   - [Test Account](#test-account)
   - [Initial Page](#initial-page)
@@ -263,7 +266,17 @@ Alert messages are sent through a socket connected to a regular vehicle. You can
 
 - When the alert to be sent to the alert target is terminated, the above message is sent.
 
-# Frontend Epas App
+# Simulation Test Method
+
+We tested the algorithm for selecting alert targets through road network simulation. The code to run the simulation can be found in the repository below.
+
+| Road Network Simulator Repository |                                                                                             Link                                                                                             |
+| :----------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|   EPAS Road Network Simulator    | [EPAS Road Network Simulator](https://github.com/Ajou-Soft-19/road-simulator)
+
+For detailed information on the simulation method and explanation, please refer to the above repository and the [Monitoring Page](#332-monitoring-page) in the front-end table of contents.
+
+# Frontend EPAS App
 
 ## Test Account
 
@@ -342,6 +355,8 @@ By this account, you can test the emergency vehicle registration and the admin p
 |<img src = "./img/circle_red.png" width = "20">|Emergency Vehicles|
 |<img src = "./img/circle_blue.png" width = "20">|Not-Alerted Vehicles|
 |<img src = "./img/circle_black.png" width = "20">|Alerted Vehicles|
+
+By selecting the emergency vehicle on the right, you can check the emergency path, checkpoints, etc. of the emergency vehicle. In addition, vehicles that have received alerts from the emergency vehicle are displayed in black in real time on the screen. You can deselect by pressing the `x` button.
 
 | Emergency Vehicle Confirmation |  
 |-------------|
