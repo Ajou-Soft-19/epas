@@ -1,6 +1,6 @@
 # [EPAS (Emergency vehicle Pre-Alerting System)]
 
-Korean version Documentation: [한국어 문서](./README_kr.md)
+Korean version Documentation: [한국어 문서](./README_KR.md)
 
 - [[EPAS (Emergency vehicle Pre-Alerting System)]](#epas-emergency-vehicle-pre-alerting-system)
   - [Project Introduction](#project-introduction)
@@ -106,6 +106,12 @@ Below are comparison images before and after using map matching.
 | ![Before Map Matching](./img/algorithm/before_map_match.jpg) | ![After Map Matching](./img/algorithm/after_map_match.jpg) |
 
 This allows us to accurately determine which checkpoint the emergency vehicle is passing through, which road it is passing through, etc. Using the location and azimuth on the road network obtained here, we select the target for the alert and send the alert message.
+
+| Accurate Vehicle Location Detection Through Map Matching |
+| :------------------------------------------------------: |
+| <img src="./img/algorithm/map_match_u_turn.gif" width="800"> |
+
+Initially in the development, we determined whether the checkpoint had been passed by using the straight-line distance between the vehicle and the checkpoint. However, this method did not take into account the vehicle's location and direction on the actual road network, making it difficult to accurately determine if the correct checkpoint had been passed. Therefore, we were able to improve this by considering the location on the road network obtained through the map matching algorithm and the direction of the vehicle to determine whether it passed the checkpoint.
 
 ## Alerting Target Selection Algorithm
 
