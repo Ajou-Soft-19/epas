@@ -1,6 +1,6 @@
 # [EPAS (Emergency vehicle Pre-Alerting System)]
 
-Korean version Documentation: [한국어](./README_kr.md)
+Korean version Documentation: [한국어 문서](./README_kr.md)
 
 - [[EPAS (Emergency vehicle Pre-Alerting System)]](#epas-emergency-vehicle-pre-alerting-system)
   - [Project Introduction](#project-introduction)
@@ -12,6 +12,7 @@ Korean version Documentation: [한국어](./README_kr.md)
 - [Algorithm](#algorithm)
   - [Map Matching Algorithm](#map-matching-algorithm)
   - [Alerting Target Selection Algorithm](#alerting-target-selection-algorithm)
+- [Limitations of Service(Currently Supporting Only Korea)](#limitations-of-servicecurrently-supporting-only-korea)
 - [Simulation Test Method](#simulation-test-method)
 - [EPAS APP](#frontend-epas-app)
   - [Test Account](#test-account)
@@ -265,6 +266,10 @@ Alert messages are sent through a socket connected to a regular vehicle. You can
 ```
 
 - When the alert to be sent to the alert target is terminated, the above message is sent.
+
+# Limitations of Service(Currently Supporting Only Korea)
+
+At present, our service is primarily constrained by the geographical data we utilize, which is sourced exclusively from [OSRM's map data of Korea](https://osm.kr). Consequently, our ability to provide map matching and warning alerts is strictly limited to the territory of Korea. This significant limitation should be taken into account when considering the use of our service outside of this specific region. For testing within the Korean territory, a [simulation test tool](#simulation-test-method) is available.
 
 # Simulation Test Method
 
