@@ -10,7 +10,7 @@
 |---|---|---|
 |![Download from Assets](../img/Install1.jpeg)|![Install Anyway](../img/Install2.jpeg)|![Install Success](../img/Install3.jpeg)
 
-### 2. Turn on Monitoring Page(Tablet Recommended)
+### 2. Turn on Monitoring Page(`Tablet Recommended`)
 
 1. Run EPAS
 2. Accept Location Permission
