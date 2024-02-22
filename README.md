@@ -4,6 +4,7 @@ Korean version Documentation: [한국어 문서](./README_KR.md)
 
 - [[EPAS (Emergency vehicle Pre-Alerting System)]](#epas-emergency-vehicle-pre-alerting-system)
   - [Project Introduction](#project-introduction)
+  - [How to run and test EPAS](#how-to-run-and-test-epas)
   - [Project Repository](#project-repository)
   - [Team Ajou Moses](#team-ajou-moses)
   - [Tech Stack](#tech-stack)
@@ -38,13 +39,17 @@ Korean version Documentation: [한국어 문서](./README_KR.md)
 - The service provides warning notifications by considering the distance, speed, and direction of emergency and surrounding vehicles through a filtering algorithm.
 - Through these warning notifications, vehicle drivers can yield the road to emergency vehicles without panic, and emergency vehicles can reach their destinations quickly.
 
+## How to run and test EPAS
+
+To run and test EPAS, please refer to the following **[link](./docs/test.md)**.
+
 ## Project Repository
 
 |       Repository Name        |         Description          |                                         Link                                          |
 | :--------------------------: | :--------------------------: | :-----------------------------------------------------------------------------------: |
 |           EPAS APP           |       Flutter EPAS App       |                [EPAS APP](https://github.com/Ajou-Soft-19/service-app)                |
 |     EPAS Service server      |     EPAS Backend Server      |         [EPAS Service server](https://github.com/Ajou-Soft-19/service-server)         |
-| EPAS Vehicle Tracking Server | EPAS Vehicle Tracking Server | [EPAS Vehicle Tracking Server](https://github.com/Ajou-Soft-19/spring-socket-server) |
+| EPAS Vehicle Tracking Server | EPAS Vehicle Tracking Server | [EPAS Vehicle Tracking Server](https://github.com/Ajou-Soft-19/spring-socket-server)  |
 |  EPAS Authentication server  |  EPAS Authentication Server  | [EPAS Authentication server](https://github.com/Ajou-Soft-19/Spring-JWT-Login-server) |
 |        EPAS Simulator        | EPAS Road Network Simulator  |           [EPAS Simulator](https://github.com/Ajou-Soft-19/road-simulator)            |
 
@@ -107,8 +112,8 @@ Below are comparison images before and after using map matching.
 
 This allows us to accurately determine which checkpoint the emergency vehicle is passing through, which road it is passing through, etc. Using the location and azimuth on the road network obtained here, we select the target for the alert and send the alert message.
 
-| Accurate Vehicle Location Detection Through Map Matching |
-| :------------------------------------------------------: |
+|   Accurate Vehicle Location Detection Through Map Matching   |
+| :----------------------------------------------------------: |
 | <img src="./img/algorithm/map_match_u_turn.gif" width="800"> |
 
 Initially in the development, we determined whether the checkpoint had been passed by using the straight-line distance between the vehicle and the checkpoint. However, this method did not take into account the vehicle's location and direction on the actual road network, making it difficult to accurately determine if the correct checkpoint had been passed. Therefore, we were able to improve this by considering the location on the road network obtained through the map matching algorithm and the direction of the vehicle to determine whether it passed the checkpoint.
@@ -281,9 +286,9 @@ At present, our service is primarily constrained by the geographical data we uti
 
 We tested the algorithm for selecting alert targets through road network simulation. The code to run the simulation can be found in the repository below.
 
-| Road Network Simulator Repository |                                                                                             Link                                                                                             |
-| :----------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|   EPAS Road Network Simulator    | [EPAS Road Network Simulator](https://github.com/Ajou-Soft-19/road-simulator)
+| Road Network Simulator Repository |                                     Link                                      |
+| :-------------------------------: | :---------------------------------------------------------------------------: |
+|    EPAS Road Network Simulator    | [EPAS Road Network Simulator](https://github.com/Ajou-Soft-19/road-simulator) |
 
 For detailed information on the simulation method and explanation, please refer to the above repository and the [Monitoring Page](#332-monitoring-page) in the front-end table of contents.
 
@@ -291,87 +296,90 @@ For detailed information on the simulation method and explanation, please refer 
 
 ## Test Account
 
-| Role | Email | Password |
-|------|-------|----------|
+| Role               | Email                  | Password          |
+| ------------------ | ---------------------- | ----------------- |
 | `Emergency, Admin` | `adminepas@ajou.ac.kr` | `adminepas1234!?` |
-| `Emergency` | `epas@ajou.ac.kr` | `1q2w3e4r!` |
+| `Emergency`        | `epas@ajou.ac.kr`      | `1q2w3e4r!`       |
 
 By this account, you can test the emergency vehicle registration and the admin page. For more information, please refer to the following.
 
 ## Initial Page
 
-| Location Permission Screen | Initial Screen                         | User Info Screen |
-|-------------|---------------------------------|------------------------------------|
-| ![Location Permission Screen](/img/initial1.jpeg) | ![Initial Screen](/img/initial2.jpeg) | ![User Info Screen](/img/initial3.jpeg) |
-|You need to set location permissions to run the app.|This is the map page for general users. By pressing the settings button, you will be taken to the account information page.|You can log in or sign up here.|
+| Location Permission Screen                           | Initial Screen                                                                                                              | User Info Screen                        |
+| ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| ![Location Permission Screen](/img/initial1.jpeg)    | ![Initial Screen](/img/initial2.jpeg)                                                                                       | ![User Info Screen](/img/initial3.jpeg) |
+| You need to set location permissions to run the app. | This is the map page for general users. By pressing the settings button, you will be taken to the account information page. | You can log in or sign up here.         |
 
 ## 1. Sign Up
 
-| Account Creation Initial Screen | Account Creation Form                         | Account Creation Success   |
-|-------------|---------------------------------|------------------------------------|
+| Account Creation Initial Screen                       | Account Creation Form                       | Account Creation Success                       |
+| ----------------------------------------------------- | ------------------------------------------- | ---------------------------------------------- |
 | ![Account Creation Initial Screen](/img/signup1.jpeg) | ![Account Creation Form](/img/signup2.jpeg) | ![Account Creation Success](/img/signup3.jpeg) |
 
 ## 2. Sign In
 
-| Login Initial Screen | Login Form                         |
-|-------------|---------------------------------|
+| Login Initial Screen                       | Login Form                                 |
+| ------------------------------------------ | ------------------------------------------ |
 | <img src="img/signin1.jpeg" width = "200"> | <img src="img/signin2.jpeg" width = "200"> |
 
 ## 3. User Info
 
 ### 3.1 General User
 
-| General User Account | After Requesting<br> Emergency Vehicle<br> Authorization      |
-|-------------|---------------------------------|
-| <img src="img/generalUser1.jpeg" width = "200"> | <img src="img/generalUser2.jpeg" width = "200"> |
+| General User Account                            | After Requesting<br> Emergency Vehicle<br> Authorization |
+| ----------------------------------------------- | -------------------------------------------------------- |
+| <img src="img/generalUser1.jpeg" width = "200"> | <img src="img/generalUser2.jpeg" width = "200">          |
 
 > Once the administrator approves the authorization, you can check the updated authorization status at Check Auth Request.
 
 ### 3.2 Emergency Auth User
 
-| Emergency Vehicle Account |  
-|-------------|
+| Emergency Vehicle Account                         |
+| ------------------------------------------------- |
 | <img src="img/emergencyUser1.jpeg" width = "200"> |
+
 > You can select the vehicle to register as an emergency situation through the Select Vehicle button.
 
-| Vehicle Selection | Vehicle Registration | Vehicle Registration Success |
-|-------------|-----------------|---|
+| Vehicle Selection                             | Vehicle Registration                             | Vehicle Registration Success                             |
+| --------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------- |
 | ![Vehicle Selection](img/selectVehicle1.jpeg) | ![Vehicle Registration](img/selectVehicle2.jpeg) | ![Vehicle Registration Success](img/selectVehicle3.jpeg) |
 
 ### 3.3 Admin
 
-| Admin Page |  
-|-------------|
+| Admin Page                                   |
+| -------------------------------------------- |
 | <img src="img/adminUser.jpeg" width = "200"> |
 
 #### 3.3.1 Admin Role Request Page
 
-| Role Management Page |  
-|-------------|
+| Role Management Page                                        |
+| ----------------------------------------------------------- |
 | <img src="img/adminRoleRequestListPage.jpeg" width = "500"> |
 
 #### 3.3.2 Monitoring Page
 
-| Initial Screen |  
-|-------------|
+| Initial Screen                                     |
+| -------------------------------------------------- |
 | <img src="img/monitoringPage1.jpeg" width = "500"> |
 
-| Vehicle Information |  
-|-------------|
+| Vehicle Information                                |
+| -------------------------------------------------- |
 | <img src="img/monitoringPage2.jpeg" width = "500"> |
+
 > The small dots on the screen represent vehicles. When you click a dot, the vehicle information pops up in a modal window.
 
-| Dots | Explanation |
-|------|-------------|
-|<img src = "./img/circle_red.png" width = "20">|Emergency Vehicles|
-|<img src = "./img/circle_blue.png" width = "20">|Not-Alerted Vehicles|
-|<img src = "./img/circle_black.png" width = "20">|Alerted Vehicles|
+| Dots                                              | Explanation          |
+| ------------------------------------------------- | -------------------- |
+| <img src = "./img/circle_red.png" width = "20">   | Emergency Vehicles   |
+| <img src = "./img/circle_blue.png" width = "20">  | Not-Alerted Vehicles |
+| <img src = "./img/circle_black.png" width = "20"> | Alerted Vehicles     |
 
 By selecting the emergency vehicle on the right, you can check the emergency path, checkpoints, etc. of the emergency vehicle. In addition, vehicles that have received alerts from the emergency vehicle are displayed in black in real time on the screen. You can deselect by pressing the `x` button.
 
-| Emergency Vehicle Confirmation |  
-|-------------|
+| Emergency Vehicle Confirmation                     |
+| -------------------------------------------------- |
 | <img src="img/monitoringPage3.jpeg" width = "500"> |
+
 > You can see the path and alert boundary for each emergency vehicle.
 
 - You can cancel the vehicle selection with the `Unselect` button.
@@ -382,25 +390,25 @@ By selecting the emergency vehicle on the right, you can check the emergency pat
 
 > The usage is the same as common navigation.
 
-| Initial Screen | Location Search List | Route Search | Guide Start |Navigation End|
-|---|---|---|---|---|
-|![Initial Screen](/img/mapPage1.jpeg)|![Location Search List](/img/mapPage2.jpeg)|![Route Search](/img/mapPage3.jpeg)|![Guide Start](/img/mapPage4.jpeg)|![Navigation End](/img/mapPage5.jpeg)|
-||You can select your desired destination.|The ETA(Estimated Time of Arrival) and Distance values are displayed. ||The guide ends when you arrive within 30m of the destination or press the back button.|
+| Initial Screen                        | Location Search List                        | Route Search                                                          | Guide Start                        | Navigation End                                                                         |
+| ------------------------------------- | ------------------------------------------- | --------------------------------------------------------------------- | ---------------------------------- | -------------------------------------------------------------------------------------- |
+| ![Initial Screen](/img/mapPage1.jpeg) | ![Location Search List](/img/mapPage2.jpeg) | ![Route Search](/img/mapPage3.jpeg)                                   | ![Guide Start](/img/mapPage4.jpeg) | ![Navigation End](/img/mapPage5.jpeg)                                                  |
+|                                       | You can select your desired destination.    | The ETA(Estimated Time of Arrival) and Distance values are displayed. |                                    | The guide ends when you arrive within 30m of the destination or press the back button. |
 
 ## 5. EPAS
 
 > For general vehicles, you receive emergency situation alerts.
 
-| First Alert Confirmation | Reflecting Emergency Vehicle Location | Multiple Emergency Situation Registration |
-| --- | --- | --- |
-| ![First Alert Confirmation](/img/alerted1.jpeg) | ![Reflecting Emergency Vehicle Location](/img/alerted2.jpeg) | ![Multiple Emergency Situation Registration](/img/alerted3.jpeg) |
-|If the media sound is on, you will hear a beep and the current location of the emergency vehicle.| The current location of the emergency vehicle is reflected. | Multiple emergency vehicles are also reflected. |
+| First Alert Confirmation                                                                          | Reflecting Emergency Vehicle Location                        | Multiple Emergency Situation Registration                        |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------- |
+| ![First Alert Confirmation](/img/alerted1.jpeg)                                                   | ![Reflecting Emergency Vehicle Location](/img/alerted2.jpeg) | ![Multiple Emergency Situation Registration](/img/alerted3.jpeg) |
+| If the media sound is on, you will hear a beep and the current location of the emergency vehicle. | The current location of the emergency vehicle is reflected.  | Multiple emergency vehicles are also reflected.                  |
 
 > For emergency vehicles, you can send emergency situation alerts.
 
-| Initial Screen | After Starting Navigation |
-| --- | - |
-|<img src="img/alerting1.jpeg" width = "200">|<img src="img/alerting2.jpeg" width = "200">|
+| Initial Screen                               | After Starting Navigation                    |
+| -------------------------------------------- | -------------------------------------------- |
+| <img src="img/alerting1.jpeg" width = "200"> | <img src="img/alerting2.jpeg" width = "200"> |
 
 # Backend Server
 
