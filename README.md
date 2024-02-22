@@ -2,9 +2,17 @@
 
 Korean version Documentation: [한국어 문서](./README_KR.md)
 
+## How to run and test EPAS
+
+To run and test EPAS, please refer to the following **[link](./docs/test.md)**.
+
+The results of the test and the implementation process are detailed in the documentation below.
+
+# Index
+
 - [[EPAS (Emergency vehicle Pre-Alerting System)]](#epas-emergency-vehicle-pre-alerting-system)
-  - [Project Introduction](#project-introduction)
   - [How to run and test EPAS](#how-to-run-and-test-epas)
+  - [Project Introduction](#project-introduction)
   - [Project Repository](#project-repository)
   - [Team Ajou Moses](#team-ajou-moses)
   - [Tech Stack](#tech-stack)
@@ -38,10 +46,6 @@ Korean version Documentation: [한국어 문서](./README_KR.md)
 - EPAS is a social infrastructure service that provides warning notifications to vehicle drivers so they can be aware of the approach of emergency vehicles in advance.
 - The service provides warning notifications by considering the distance, speed, and direction of emergency and surrounding vehicles through a filtering algorithm.
 - Through these warning notifications, vehicle drivers can yield the road to emergency vehicles without panic, and emergency vehicles can reach their destinations quickly.
-
-## How to run and test EPAS
-
-To run and test EPAS, please refer to the following **[link](./docs/test.md)**.
 
 ## Project Repository
 
