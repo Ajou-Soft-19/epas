@@ -92,7 +92,6 @@ To run and test EPAS, please refer to the following **[link](./docs/test.md)**.
 
 <div align="center">
     <img src="https://img.shields.io/badge/GoogleMapsAPI-4285F4?style=for-the-badge&logo=googlemaps&logoColor=white">
-    <img src="https://img.shields.io/badge/NaverMapsAPI-03C75A?style=for-the-badge&logo=naver&logoColor=white">
     <img src="https://img.shields.io/badge/OSRMAPI-7D669E?style=for-the-badge&logo=openstreetmap&logoColor=white">
 </div>
 
