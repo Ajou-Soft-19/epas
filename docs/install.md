@@ -4,4 +4,4 @@
 
 |Download from Assets|Install Anyway|Install Success|
 |---|---|---|
-|![Download from Assets](../img/install1.jpeg)|![Install Anyway](../img/install2.jpeg)|![Install Success](../img/install3.jpeg)
+|![Download from Assets](../img/Install1.jpeg)|![Install Anyway](../img/Install2.jpeg)|![Install Success](../img/Install3.jpeg)
