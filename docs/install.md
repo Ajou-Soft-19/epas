@@ -1,5 +1,3 @@
-# Install
-
 ## Install
 
 [Download apk file](`https://github.com/Ajou-Soft-19/service-app/releases/tag/v1.0.1`) on your based on Android
