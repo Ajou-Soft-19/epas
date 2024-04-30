@@ -55,6 +55,8 @@ EPAS 시스템을 사회 기반 시스템에 도입한다면 값싼 비용으로
 
 ## EPAS Social Rewarding System 개발
 
+이 [링크](https://ajou-epas.xyz/)를 통해 접속할 수 있습니다.
+
 저희 팀은 EPAS를 더 많은 사람들이 사용하도록 유도하기 위해 EPAS Social Rewarding System을 개발하였습니다. 이를 통해 지역별로 EPAS를 사용하는 사람들을 카운팅할 수 있고, 사용자들의 선의의 경쟁을 유도해 더 많은 사람들이 EPAS를 사용하도록 할 수 있습니다.
 
 | EPAS Social Rewarding System1 | EPAS Social Rewarding System2 | EPAS Social Rewarding System3 |

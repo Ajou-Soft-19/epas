@@ -54,6 +54,8 @@ If the EPAS system is introduced into a social-based system, it can provide grea
 
 ## EPAS Social Rewarding System Development
 
+Through this [link](https://ajou-epas.xyz/), you can access the EPAS Social Rewarding Dashboard.
+
 Our team developed the EPAS Social Rewarding System to encourage more people to use EPAS. This allows you to count the number of people using EPAS by region and encourage users to use EPAS through friendly competition.
 
 | EPAS Social Rewarding System1 | EPAS Social Rewarding System2 | EPAS Social Rewarding System3 |
