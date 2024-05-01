@@ -56,6 +56,9 @@
 |    EPAS 차량 모니터링 서버    |    EPAS 차량 모니터링 서버    |    [EPAS 차량 모니터링 서버](https://github.com/Ajou-Soft-19/spring-socket-server)    |
 |        EPAS 인증 서버         |        EPAS 인증 서버         | [EPAS Authentication server](https://github.com/Ajou-Soft-19/Spring-JWT-Login-server) |
 | EPAS 도로 네트워크 시뮬레이터 | EPAS 도로 네트워크 시뮬레이터 |    [EPAS 도로 네트워크 시뮬레이터](https://github.com/Ajou-Soft-19/road-simulator)    |
+|    EPAS Embedded 단말      | EPAS Embedded 단말         | [EPAS Embedded Device](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/embedded)                                                              |
+|   EPAS Social Rewarding     | EPAS 소셜 리워딩 시스템 | [EPAS Social Rewarding System](https://github.com/Ajou-Soft-19/service-web)                                                      |
+|   EPAS API Pluginization     | EPAS API 문서        | [EPAS API 문ㄴ서](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/api)                                                            |
 
 ## Team Ajou Moses
 
@@ -70,11 +73,15 @@
     <img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
     <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white">
     <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white">
+    <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
     <br>
     <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white">
     <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white">
+    <img src="https://img.shields.io/badge/arduino-00878F?style=for-the-badge&logo=arduino&logoColor=white">
+    <br>
     <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white">
     <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white">
+    <img src="https://img.shields.io/badge/OSRM-7D669E?style=for-the-badge&logo=openstreetmap&logoColor=white">
 </div>
 
 <br>
@@ -90,6 +97,10 @@
     <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white">
     <img src="https://img.shields.io/badge/GoogleCloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white">
     <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
+    <br>
+    <img src="https://img.shields.io/badge/intellijidea-000000?style=for-the-badge&logo=intellijidea&logoColor=white">
+    <img src="https://img.shields.io/badge/DataGrip-000000?style=for-the-badge&logo=datagrip&logoColor=white">
+    <img src="https://img.shields.io/badge/vscode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
 </div>
 
 ## API Used

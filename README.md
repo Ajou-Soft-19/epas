@@ -83,6 +83,9 @@ Through this, we aimed to expand EPAS to be used worldwide so that more people c
 | EPAS Vehicle Tracking Server | EPAS Vehicle Tracking Server | [EPAS Vehicle Tracking Server](https://github.com/Ajou-Soft-19/spring-socket-server)  |
 |  EPAS Authentication server  |  EPAS Authentication Server  | [EPAS Authentication server](https://github.com/Ajou-Soft-19/Spring-JWT-Login-server) |
 |        EPAS Simulator        | EPAS Road Network Simulator  |           [EPAS Simulator](https://github.com/Ajou-Soft-19/road-simulator)            |
+|    EPAS Embedded Device      | EPAS Embedded Device         | [EPAS Embedded Device](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/embedded)                                                              |
+|   EPAS Social Rewarding     | EPAS Social Rewarding System | [EPAS Social Rewarding System](https://github.com/Ajou-Soft-19/service-web)                                                      |
+|   EPAS API Pluginization     | EPAS API Pluginization        | [EPAS API Pluginization](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/api)                                                            |
 
 ## Team Ajou Moses
 
@@ -97,11 +100,15 @@ Through this, we aimed to expand EPAS to be used worldwide so that more people c
     <img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
     <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white">
     <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white">
+    <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
     <br>
     <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white">
     <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white">
+    <img src="https://img.shields.io/badge/arduino-00878F?style=for-the-badge&logo=arduino&logoColor=white">
+    <br>
     <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white">
     <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white">
+    <img src="https://img.shields.io/badge/OSRM-7D669E?style=for-the-badge&logo=openstreetmap&logoColor=white">
 </div>
 
 <br>
@@ -117,6 +124,10 @@ Through this, we aimed to expand EPAS to be used worldwide so that more people c
     <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white">
     <img src="https://img.shields.io/badge/GoogleCloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white">
     <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
+    <br>
+    <img src="https://img.shields.io/badge/intellijidea-000000?style=for-the-badge&logo=intellijidea&logoColor=white">
+    <img src="https://img.shields.io/badge/DataGrip-000000?style=for-the-badge&logo=datagrip&logoColor=white">
+    <img src="https://img.shields.io/badge/vscode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
 </div>
 
 ## API Used
