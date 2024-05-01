@@ -25,6 +25,8 @@ Preparing Round 2 Submission, we have improved and added features to EPAS. There
 
 Through this, we aimed to expand EPAS to be used worldwide so that more people can use it. EPAS is developed with scalability so that it can be used worldwide by adding map data to the road network calculation engine. Also, if EPAS uses Google Maps API, it can provide more real-time route information.
 
+The document is located below, so please go through the link above.
+
 ## Index
 
 - [[EPAS (Emergency vehicle Pre-Alerting System)]](#epas-emergency-vehicle-pre-alerting-system)
