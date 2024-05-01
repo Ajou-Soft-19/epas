@@ -58,7 +58,7 @@
 | EPAS 도로 네트워크 시뮬레이터 | EPAS 도로 네트워크 시뮬레이터 |    [EPAS 도로 네트워크 시뮬레이터](https://github.com/Ajou-Soft-19/road-simulator)    |
 |    EPAS Embedded 단말      | EPAS Embedded 단말         | [EPAS Embedded Device](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/embedded)                                                              |
 |   EPAS Social Rewarding     | EPAS 소셜 리워딩 시스템 | [EPAS Social Rewarding System](https://github.com/Ajou-Soft-19/service-web)                                                      |
-|   EPAS API Pluginization     | EPAS API 문서        | [EPAS API 문ㄴ서](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/api)                                                            |
+|   EPAS API Pluginization     | EPAS API 문서        | [EPAS API 문서](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/api)                                                            |
 
 ## Team Ajou Moses
 
@@ -577,7 +577,7 @@ EPAS 클라이언트 디바이스는 큰 컴퓨팅 파워가 필요하지 않으
 
 |                                                EPAS 회로 구성                                            |             EPAS Client Divice Prototype               |
 | :------------------------------------------------------------------------------------------------: | :----------------------------------------------: |
-| <img src="https://github.com/Ajou-Soft-19/EPAS-Embeded-Client/assets/32717522/db2253ca-8453-4697-8732-e4e98be4027a" alt="EPAS" style="display: block; margin-left: auto; margin-right: auto;" /> | <img src="https://github.com/Ajou-Soft-19/EPAS-Embeded-Client/assets/32717522/06179948-e7e7-4f62-894e-7a36c9a6e1fe" alt="Additional Information" style="display: block; margin-left: auto; margin-right: auto;" /> |
+| <img src="https://github.com/Ajou-Soft-19/EPAS-Embeded-Client/assets/32717522/db2253ca-8453-4697-8732-e4e98be4027a" alt="EPAS" style="display: block; margin-left: auto; margin-right: auto;" /> | <img src="https://github.com/Ajou-Soft-19/EPAS-Client/assets/32717522/ec86e577-3862-43d4-927b-14db2f0a534d" alt="Additional Information" style="display: block; margin-left: auto; margin-right: auto;" /> |
 
 위 사진은 개발된 EPAS 클라이언트 디바이스의 프로토타입 사진입니다. 이 디바이스에 사용된 하드웨어는 아래와 같습니다.
 

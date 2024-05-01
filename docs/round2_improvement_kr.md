@@ -22,7 +22,7 @@ EPAS 클라이언트 디바이스는 큰 컴퓨팅 파워가 필요하지 않으
 
 |                                                EPAS 회로 구성                                            |             EPAS Client Divice Prototype               |
 | :------------------------------------------------------------------------------------------------: | :----------------------------------------------: |
-| <img src="https://github.com/Ajou-Soft-19/EPAS-Embeded-Client/assets/32717522/db2253ca-8453-4697-8732-e4e98be4027a" alt="EPAS" style="display: block; margin-left: auto; margin-right: auto;" /> | <img src="https://github.com/Ajou-Soft-19/EPAS-Embeded-Client/assets/32717522/06179948-e7e7-4f62-894e-7a36c9a6e1fe" alt="Additional Information" style="display: block; margin-left: auto; margin-right: auto;" /> |
+| <img src="https://github.com/Ajou-Soft-19/EPAS-Embeded-Client/assets/32717522/db2253ca-8453-4697-8732-e4e98be4027a" alt="EPAS" style="display: block; margin-left: auto; margin-right: auto;" /> | <img src="https://github.com/Ajou-Soft-19/EPAS-Client/assets/32717522/ec86e577-3862-43d4-927b-14db2f0a534d" alt="Additional Information" style="display: block; margin-left: auto; margin-right: auto;" /> |
 
 위 사진은 개발된 EPAS 클라이언트 디바이스의 프로토타입 사진입니다. 이 디바이스에 사용된 하드웨어는 아래와 같습니다.
 
