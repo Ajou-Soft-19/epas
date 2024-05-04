@@ -78,16 +78,16 @@ The document is located below, so please go through the link above.
 
 ## Project Repository
 
-|       Repository Name        |         Description          |                                         Link                                          |
-| :--------------------------: | :--------------------------: | :-----------------------------------------------------------------------------------: |
-|           EPAS APP           |       Flutter EPAS App       |                [EPAS APP](https://github.com/Ajou-Soft-19/service-app)                |
-|     EPAS Service server      |     EPAS Backend Server      |         [EPAS Service server](https://github.com/Ajou-Soft-19/service-server)         |
-| EPAS Vehicle Tracking Server | EPAS Vehicle Tracking Server | [EPAS Vehicle Tracking Server](https://github.com/Ajou-Soft-19/spring-socket-server)  |
-|  EPAS Authentication server  |  EPAS Authentication Server  | [EPAS Authentication server](https://github.com/Ajou-Soft-19/Spring-JWT-Login-server) |
-|        EPAS Simulator        | EPAS Road Network Simulator  |           [EPAS Simulator](https://github.com/Ajou-Soft-19/road-simulator)            |
-|    EPAS Embedded Device      | EPAS Embedded Device         | [EPAS Embedded Device](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/embedded)                                                              |
-|   EPAS Social Rewarding     | EPAS Social Rewarding System | [EPAS Social Rewarding System](https://github.com/Ajou-Soft-19/service-web)                                                      |
-|   EPAS API Pluginization     | EPAS API Pluginization        | [EPAS API Pluginization](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/api)                                                            |
+|       Repository Name        |         Description          |                                          Link                                          |
+| :--------------------------: | :--------------------------: | :------------------------------------------------------------------------------------: |
+|           EPAS APP           |       Flutter EPAS App       |                [EPAS APP](https://github.com/Ajou-Soft-19/service-app)                 |
+|     EPAS Service server      |     EPAS Backend Server      |         [EPAS Service server](https://github.com/Ajou-Soft-19/service-server)          |
+| EPAS Vehicle Tracking Server | EPAS Vehicle Tracking Server |  [EPAS Vehicle Tracking Server](https://github.com/Ajou-Soft-19/spring-socket-server)  |
+|  EPAS Authentication server  |  EPAS Authentication Server  | [EPAS Authentication server](https://github.com/Ajou-Soft-19/Spring-JWT-Login-server)  |
+|        EPAS Simulator        | EPAS Road Network Simulator  |            [EPAS Simulator](https://github.com/Ajou-Soft-19/road-simulator)            |
+|     EPAS Embedded Device     |     EPAS Embedded Device     | [EPAS Embedded Device](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/embedded) |
+|    EPAS Social Rewarding     | EPAS Social Rewarding System |      [EPAS Social Rewarding System](https://github.com/Ajou-Soft-19/service-web)       |
+|    EPAS API Pluginization    |    EPAS API Pluginization    |  [EPAS API Pluginization](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/api)   |
 
 ## Team Ajou Moses
 
@@ -455,9 +455,9 @@ By selecting the emergency vehicle on the right, you can check the emergency pat
 
 # Backend Server
 
-|                   Server Stack                   |
-| :----------------------------------------------: |
-| ![Server Stack](/img/algorithm/server_stack.png) |
+|                                                Server Stack                                                |
+| :--------------------------------------------------------------------------------------------------------: |
+| ![Server Stack](https://github.com/Ajou-Soft-19/epas/assets/32717522/5837f8b6-4c52-444e-b17b-011b92733479) |
 
 The backend server uses the following technology stack. The WAS is Spring Boot, and the DB uses PostgreSQL and Redis. Also, REST API and Redis Pub/Sub are used for communication between servers.
 
@@ -602,29 +602,29 @@ EPAS was initially developed as a plugin to be embedded in navigation, but it wa
 
 Source code can be found at this link: [EPAS-Embeded-Client](https://github.com/Ajou-Soft-19/EPAS-Client/blob/main/embedded/gsc_node_mcu.ino)
 
-|                                          EPAS Implementaion                                            |             EPAS Client Divice Prototype               |
-| :------------------------------------------------------------------------------------------------: | :----------------------------------------------: |
+|                                                                                        EPAS Implementaion                                                                                        |                                                                                        EPAS Client Divice Prototype                                                                                        |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/Ajou-Soft-19/EPAS-Embeded-Client/assets/32717522/db2253ca-8453-4697-8732-e4e98be4027a" alt="EPAS" style="display: block; margin-left: auto; margin-right: auto;" /> | <img src="https://github.com/Ajou-Soft-19/EPAS-Client/assets/32717522/ec86e577-3862-43d4-927b-14db2f0a534d" alt="Additional Information" style="display: block; margin-left: auto; margin-right: auto;" /> |
 
 The above picture is a prototype picture of the developed EPAS client device. The hardware used in this device is as follows.
 
-| No.  |          Name        | Quantity | Price (USD) |
-|------|----------------------|------|------------|
-| 1    | NodeMCU V3           | 1    | $1.8       |
-| 2    | GPS Module (Neo-7M)  | 1    | $5.7       |
-| 3    | LCD (16x2)           | 1    | $1.0       |
-| 4    | DFPlayer Mini        | 1    | $0.8       |
-| 5    | Speaker              | 1    | $1.3       |
-| 6    | Micro SD (16GB)      | 1    | $3.0       |
+| No. | Name                | Quantity | Price (USD) |
+| --- | ------------------- | -------- | ----------- |
+| 1   | NodeMCU V3          | 1        | $1.8        |
+| 2   | GPS Module (Neo-7M) | 1        | $5.7        |
+| 3   | LCD (16x2)          | 1        | $1.0        |
+| 4   | DFPlayer Mini       | 1        | $0.8        |
+| 5   | Speaker             | 1        | $1.3        |
+| 6   | Micro SD (16GB)     | 1        | $3.0        |
 
-**Total Price:  $13.6**
+**Total Price: $13.6**
 
 Prototype was made for development and testing purposes, and actual products can be made with smaller and cheaper hardware through wholesale.
 
 ## Operation Method
 
-| EPAS Warning Message |
-| :-------------------: |
+|                                                        EPAS Warning Message                                                        |
+| :--------------------------------------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/Ajou-Soft-19/EPAS-Embeded-Client/assets/32717522/4702b382-53fd-4043-834f-7d6f8b6fdb7e" width="700px"> |
 
 - When an emergency vehicle warning is issued, it displays the **license number of the emergency vehicle**, **the direction of approach of the emergency vehicle**, and **the number of emergency vehicles around**.
@@ -652,8 +652,8 @@ Through this [link](https://ajou-epas.xyz/), you can access the EPAS Social Rewa
 
 Our team developed the EPAS Social Rewarding System to encourage more people to use EPAS. This allows you to count the number of people using EPAS by region and encourage users to use EPAS through friendly competition.
 
-| EPAS Social Rewarding System1 | EPAS Social Rewarding System2 | EPAS Social Rewarding System3 |
-| :--------------------------: | :--------------------------: | :--------------------------: |
+|                                     EPAS Social Rewarding System1                                     |                                     EPAS Social Rewarding System2                                     |                                     EPAS Social Rewarding System3                                     |
+| :---------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/4bcb2caa-0a3a-429c-bfb0-6e03fc9b979b"> | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/459218a8-f8b7-4bc5-83ed-839efae5e41b"> | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/14191736-ec43-475d-9ef6-666865dd3296"> |
 
 EPAS Social Rewarding System counts the records of notifications sent to surrounding vehicles when an emergency vehicle is operating in an emergency situation. This allows users to know that many people are using EPAS in their area or other areas, and encourages more people to use EPAS.
@@ -664,9 +664,9 @@ Source code can be found at this link: [EPAS Social Rewarding System](https://gi
 
 ## EPAS API Pluginization
 
-| EPAS API Documentation Example | EPAS API Documentation Example |
-| :---------------------: | :---------------------: |
-| <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/ece5cd5c-d23d-4958-b0a0-94374cef753c"> | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/81365216-7733-4d71-ad59-c9bad3e8057b">
+|                                    EPAS API Documentation Example                                     |                                    EPAS API Documentation Example                                     |
+| :---------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
+| <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/ece5cd5c-d23d-4958-b0a0-94374cef753c"> | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/81365216-7733-4d71-ad59-c9bad3e8057b"> |
 
 To make EPAS more accessible to more people, we have organized the EPAS API and created a detailed document on how to use it so that developers can easily use EPAS. This allows more people to use the EPAS system not only in the EPAS app but also in other applications.
 
@@ -684,8 +684,8 @@ The emergency vehicle API requires more API endpoints than the EPAS general user
 
 ## EPAS Application Optimization
 
-| EPAS Mentoring |
-| :-------------------: |
+|                                                   EPAS Mentoring                                                    |
+| :-----------------------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/b5900fdf-dc4e-4d41-a9a6-5f51c4fd140b" width="700px"> |
 
 Threw Google mentoring, we improved the reliability of the EPAS application. Previously, the application did not properly control socket communication in the background, so the user's previous location information was maintained. In the last submission, we modified the server logic to close sessions that no longer send messages periodically.
