@@ -167,7 +167,7 @@ The biggest technical problem we faced was deciding the standard for issuing ale
 
 When an emergency vehicle activates an emergency situation, the backend server continuously monitors the emergency vehicle (approximately every 1 second) and sends alerts to vehicles that are expected to encounter the emergency vehicle.
 
-### **Alerting Target Selection Algorithm Sudo Code**
+### **Alerting Target Selection Algorithm Pesudo-code**
 
 ```c
 def issue_alert(emergency_car, checkpoints, vehicles):
