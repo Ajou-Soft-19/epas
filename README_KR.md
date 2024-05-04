@@ -49,16 +49,16 @@
 
 ## Project Repository
 
-|         리포지토리명          |             설명              |                                         링크                                          |
-| :---------------------------: | :---------------------------: | :-----------------------------------------------------------------------------------: |
-|           EPAS APP            |       Flutter EPAS App        |                [EPAS APP](https://github.com/Ajou-Soft-19/service-app)                |
-|       EPAS 서비스 서버        |       EPAS 백엔드 서버        |          [EPAS 서비스 서버](https://github.com/Ajou-Soft-19/service-server)           |
-|    EPAS 차량 모니터링 서버    |    EPAS 차량 모니터링 서버    |    [EPAS 차량 모니터링 서버](https://github.com/Ajou-Soft-19/spring-socket-server)    |
-|        EPAS 인증 서버         |        EPAS 인증 서버         | [EPAS Authentication server](https://github.com/Ajou-Soft-19/Spring-JWT-Login-server) |
-| EPAS 도로 네트워크 시뮬레이터 | EPAS 도로 네트워크 시뮬레이터 |    [EPAS 도로 네트워크 시뮬레이터](https://github.com/Ajou-Soft-19/road-simulator)    |
-|    EPAS Embedded 단말      | EPAS Embedded 단말         | [EPAS Embedded Device](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/embedded)                                                              |
-|   EPAS Social Rewarding     | EPAS 소셜 리워딩 시스템 | [EPAS Social Rewarding System](https://github.com/Ajou-Soft-19/service-web)                                                      |
-|   EPAS API Pluginization     | EPAS API 문서        | [EPAS API 문서](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/api)                                                            |
+|         리포지토리명          |             설명              |                                          링크                                          |
+| :---------------------------: | :---------------------------: | :------------------------------------------------------------------------------------: |
+|           EPAS APP            |       Flutter EPAS App        |                [EPAS APP](https://github.com/Ajou-Soft-19/service-app)                 |
+|       EPAS 서비스 서버        |       EPAS 백엔드 서버        |           [EPAS 서비스 서버](https://github.com/Ajou-Soft-19/service-server)           |
+|    EPAS 차량 모니터링 서버    |    EPAS 차량 모니터링 서버    |    [EPAS 차량 모니터링 서버](https://github.com/Ajou-Soft-19/spring-socket-server)     |
+|        EPAS 인증 서버         |        EPAS 인증 서버         | [EPAS Authentication server](https://github.com/Ajou-Soft-19/Spring-JWT-Login-server)  |
+| EPAS 도로 네트워크 시뮬레이터 | EPAS 도로 네트워크 시뮬레이터 |    [EPAS 도로 네트워크 시뮬레이터](https://github.com/Ajou-Soft-19/road-simulator)     |
+|      EPAS Embedded 단말       |      EPAS Embedded 단말       | [EPAS Embedded Device](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/embedded) |
+|     EPAS Social Rewarding     |    EPAS 소셜 리워딩 시스템    |      [EPAS Social Rewarding System](https://github.com/Ajou-Soft-19/service-web)       |
+|    EPAS API Pluginization     |         EPAS API 문서         |       [EPAS API 문서](https://github.com/Ajou-Soft-19/EPAS-Client/tree/main/api)       |
 
 ## Team Ajou Moses
 
@@ -127,8 +127,8 @@
 
 이를 통해 응급차량이 어떤 체크포인트를 지나가고 있는지, 어떤 도로를 통과하고 있는지 등을 정확하게 파악할 수 있습니다. 여기서 구한 도로 네트워크 상의 위치와 방위각을 이용해 경고 대상을 선정하고 경고 메시지를 전송합니다.
 
-| 맵 매칭을 통해 정확한 차량 위치 파악 |
-| :-----------------------------------: |
+|             맵 매칭을 통해 정확한 차량 위치 파악             |
+| :----------------------------------------------------------: |
 | <img src="./img/algorithm/map_match_u_turn.gif" width="800"> |
 
 개발 초기에는 차량과 체크포인트의 직선 거리를 이용해 체크포인트를 지났는지 판단하였습니다. 하지만 이 방법은 실제 도로 네트워크 상에서 차량의 위치와 방향을 고려하지 않아, 정확한 체크포인트를 지나갔는지 판단하기 어려웠습니다. 따라서, 맵 매칭 알고리즘을 통해 구한 도로 네트워크 상의 위치와 차량의 방향을 고려하여 체크포인트를 지나갔는지 판단하도록 하여 이를 개선할 수 있었습니다.
@@ -302,9 +302,9 @@ def issue_alert(emergency_car, checkpoints, vehicles):
 
 도로 네트워크 시뮬레이션을 통해 경고 대상을 선정하는 알고리즘을 테스트하였습니다. 시뮬레이션을 실행하는 코드는 아래 리포지토리에서 확인할 수 있습니다.
 
-| 도로 네트워크 시뮬레이터 리포지토리 |                                                                                             링크                                                                                             |
-| :----------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|   EPAS 도로 네트워크 시뮬레이터    | [EPAS 도로 네트워크 시뮬레이터](https://github.com/Ajou-Soft-19/road-simulator)
+| 도로 네트워크 시뮬레이터 리포지토리 |                                      링크                                       |
+| :---------------------------------: | :-----------------------------------------------------------------------------: |
+|    EPAS 도로 네트워크 시뮬레이터    | [EPAS 도로 네트워크 시뮬레이터](https://github.com/Ajou-Soft-19/road-simulator) |
 
 시뮬레이션 방법과 설명에 대한 자세한 정보는 위 리포지토리와 프론트 엔드 목차의 [모니터링 페이지](#332-monitoring-page)를 참고해주세요.
 
@@ -312,122 +312,125 @@ def issue_alert(emergency_car, checkpoints, vehicles):
 
 ## 테스트 계정
 
-| 권한 | 이메일 | 비밀번호 |
-|------|-------|----------|
+| 권한               | 이메일                 | 비밀번호          |
+| ------------------ | ---------------------- | ----------------- |
 | `Emergency, Admin` | `adminepas@ajou.ac.kr` | `adminepas1234!?` |
-| `Emergency` | `epas@ajou.ac.kr` | `1q2w3e4r!` |
+| `Emergency`        | `epas@ajou.ac.kr`      | `1q2w3e4r!`       |
 
 이 계정을 통해 응급 차량 등록과 어드민 페이지를 테스트할 수 있습니다. 자세한 내용은 아래를 참고해주세요.
 
 ## Initial page
 
-| 위치권한 화면 | 초기 화면                         | 유저 인포 화면 |
-|-------------|---------------------------------|------------------------------------|
-| ![위치권한 화면](/img/initial1.jpeg) | ![초기화면](/img/initial2.jpeg) | ![유저 인포 화면](/img/initial3.jpeg) |
-|위치 권한 설정을 해야 앱을 실행할 수 있습니다.|일반 사용자의 맵 페이지로, 설정버튼을 누르면 계정 정보 페이지로 넘어갑니다. |로그인하거나 회원가입할 수 있습니다.|
+| 위치권한 화면                                  | 초기 화면                                                                   | 유저 인포 화면                        |
+| ---------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------- |
+| ![위치권한 화면](/img/initial1.jpeg)           | ![초기화면](/img/initial2.jpeg)                                             | ![유저 인포 화면](/img/initial3.jpeg) |
+| 위치 권한 설정을 해야 앱을 실행할 수 있습니다. | 일반 사용자의 맵 페이지로, 설정버튼을 누르면 계정 정보 페이지로 넘어갑니다. | 로그인하거나 회원가입할 수 있습니다.  |
 
 ## 1. Sign up
 
-| 계정 생성 초기 화면 | 계정 생성 폼                         | 계정 생성 성공   |
-|-------------|---------------------------------|------------------------------------|
+| 계정 생성 초기 화면                      | 계정 생성 폼                       | 계정 생성 성공                       |
+| ---------------------------------------- | ---------------------------------- | ------------------------------------ |
 | ![계정 생성 초기화면](/img/signup1.jpeg) | ![계정 생성 폼](/img/signup2.jpeg) | ![계정 생성 성공](/img/signup3.jpeg) |
 
 ## 2. Sign in
 
-| 로그인 초기 화면 | 로그인 폼                         |
-|-------------|---------------------------------|
+| 로그인 초기 화면                           | 로그인 폼                                  |
+| ------------------------------------------ | ------------------------------------------ |
 | <img src="img/signin1.jpeg" width = "200"> | <img src="img/signin2.jpeg" width = "200"> |
 
 ## 3. User Info
 
 ### 3.1 General User
 
-| 일반사용자 계정 | 응급차량 권한 등록 권한 요청 후      |
-|-------------|---------------------------------|
+| 일반사용자 계정                                 | 응급차량 권한 등록 권한 요청 후                 |
+| ----------------------------------------------- | ----------------------------------------------- |
 | <img src="img/generalUser1.jpeg" width = "200"> | <img src="img/generalUser2.jpeg" width = "200"> |
 
 > 관리자가 권한을 수락하면, Check Auth Request로 권한이 수정된 것을 확인할 수 있습니다.
 
 ### 3.2 Emergency Auth User
 
-| 응급차량 계정 |  
-|-------------|
+| 응급차량 계정                                     |
+| ------------------------------------------------- |
 | <img src="img/emergencyUser1.jpeg" width = "200"> |
+
 > 차량 선택 버튼을 통해 응급 상황으로 등록할 차량을 선택할 수 있다.
 
-| 차량 선택 | 차량 등록 | 차량 등록 성공 |
-|-------------|-----------------|---|
+| 차량 선택                            | 차량 등록                            | 차량 등록 성공                             |
+| ------------------------------------ | ------------------------------------ | ------------------------------------------ |
 | ![차량선택](img/selectVehicle1.jpeg) | ![차량등록](img/selectVehicle2.jpeg) | ![차량 등록 성공](img/selectVehicle3.jpeg) |
 
 ### 3.3 Admin
 
-| 어드민 페이지 |  
-|-------------|
+| 어드민 페이지                                |
+| -------------------------------------------- |
 | <img src="img/adminUser.jpeg" width = "200"> |
 
 #### 3.3.1 Admin Role Request Page
 
-| 권한 관리 페이지 |  
-|-------------|
+| 권한 관리 페이지                                            |
+| ----------------------------------------------------------- |
 | <img src="img/adminRoleRequestListPage.jpeg" width = "500"> |
 
 #### 3.3.2 Monitoring Page
 
-| 초기화면 |  
-|-------------|
+| 초기화면                                           |
+| -------------------------------------------------- |
 | <img src="img/monitoringPage1.jpeg" width = "500"> |
 
-| 차량 정보 |  
-|-------------|
+| 차량 정보                                          |
+| -------------------------------------------------- |
 | <img src="img/monitoringPage2.jpeg" width = "500"> |
+
 > 화면 위에 작은 점들은 차량으로, 점을 누르면 차량 정보가 모달 창이 뜹니다.
 
-| Dots | Explanation |
-|------|-------------|
-|<img src = "./img/circle_red.png" width = "20">|Emergency Vehicles|
-|<img src = "./img/circle_blue.png" width = "20">|Not-Alerted Vehicles|
-|<img src = "./img/circle_black.png" width = "20">|Alerted Vehicles|
+| Dots                                              | Explanation          |
+| ------------------------------------------------- | -------------------- |
+| <img src = "./img/circle_red.png" width = "20">   | Emergency Vehicles   |
+| <img src = "./img/circle_blue.png" width = "20">  | Not-Alerted Vehicles |
+| <img src = "./img/circle_black.png" width = "20"> | Alerted Vehicles     |
 
 오른쪽의 응급 차량을 선택하면 응급 차량의 응급 경로, 체크포인트 등을 확인할 수 있습니다. 또한 화면에 응급차량의 알림을 받은 차량들을 실시간으로 검은색으로 표시해줍니다. `x` 버튼을 누르면 선택을 취소할 수 있습니다.
 
-| 긴급차량 별 확인 |  
-|-------------|
+| 긴급차량 별 확인                                   |
+| -------------------------------------------------- |
 | <img src="img/monitoringPage3.jpeg" width = "500"> |
-> 응급차 별로 경로와 알림 경계를 볼 수 있습니다.  
 
-- `Unselect` 버튼으로 차량 선택 버튼을 취소할 수 있습니다.  
-- `Filter` 버튼으로 화면에 표시되는 영역의 범위를 정합니다.  
+> 응급차 별로 경로와 알림 경계를 볼 수 있습니다.
+
+- `Unselect` 버튼으로 차량 선택 버튼을 취소할 수 있습니다.
+- `Filter` 버튼으로 화면에 표시되는 영역의 범위를 정합니다.
 - `Pin` 버튼으로 선택한 차량을 중심으로 화면을 고정합니다.
 
 ## 4. Map Page
 
 > 일반적인 네비게이션 사용법과 동일합니다.
 
-| 초기화면 | 위치 검색 리스트 | 경로 탐색 | 가이드 시작 |네비게이션 종료|
-|---|---|---|---|---|
-|![초기화면](/img/mapPage1.jpeg)|![위치 검색 리스트](/img/mapPage2.jpeg)|![경로 탐색](/img/mapPage3.jpeg)|![가이드 시작](/img/mapPage4.jpeg)|![네비게이션 종료](/img/mapPage5.jpeg)|
-||원하는 목적지를 선택할 수 있습니다.|ETA(Estimated Time of Arrival), Distance 값이 나옵니다. ||뒤로가기 버튼이나 목적지 30m 부근에 도착하면 가이드를 종료합니다.|
+| 초기화면                        | 위치 검색 리스트                        | 경로 탐색                                               | 가이드 시작                        | 네비게이션 종료                                                   |
+| ------------------------------- | --------------------------------------- | ------------------------------------------------------- | ---------------------------------- | ----------------------------------------------------------------- |
+| ![초기화면](/img/mapPage1.jpeg) | ![위치 검색 리스트](/img/mapPage2.jpeg) | ![경로 탐색](/img/mapPage3.jpeg)                        | ![가이드 시작](/img/mapPage4.jpeg) | ![네비게이션 종료](/img/mapPage5.jpeg)                            |
+|                                 | 원하는 목적지를 선택할 수 있습니다.     | ETA(Estimated Time of Arrival), Distance 값이 나옵니다. |                                    | 뒤로가기 버튼이나 목적지 30m 부근에 도착하면 가이드를 종료합니다. |
 
 ## 5. EPAS
 
 > 일반 차량일 경우, 응급 상황의 알림을 받습니다.
 
-| 첫 알림 확인 | 응급 차량 위치 반영 | 여러 응급 상황 등록 |
-| --- | --- | --- |
-| ![첫 알림 확인](/img/alerted1.jpeg) | ![응급 차량 위치 반영](/img/alerted2.jpeg) | ![여러 응급 상황 등록](/img/alerted3.jpeg) |
-|미디어 소리를 켜놓으면 비프음과 응급 차량의 현 위치를 말해줍니다.| 응급차의 현 위치를 반영합니다. | 여러 응급 차량도 반영됩니다. |
+| 첫 알림 확인                                                      | 응급 차량 위치 반영                        | 여러 응급 상황 등록                        |
+| ----------------------------------------------------------------- | ------------------------------------------ | ------------------------------------------ |
+| ![첫 알림 확인](/img/alerted1.jpeg)                               | ![응급 차량 위치 반영](/img/alerted2.jpeg) | ![여러 응급 상황 등록](/img/alerted3.jpeg) |
+| 미디어 소리를 켜놓으면 비프음과 응급 차량의 현 위치를 말해줍니다. | 응급차의 현 위치를 반영합니다.             | 여러 응급 차량도 반영됩니다.               |
 
 > 응급 차량일 경우, 응급 상황의 알림을 발송할 수 있습니다.
 
-| 초기 화면 | 네비게이션 시작 후 |
-| --- | - |
-| <img src="img/alerting1.jpeg" width = "200">|<img src="img/alerting2.jpeg" width = "200">|
+| 초기 화면                                    | 네비게이션 시작 후                           |
+| -------------------------------------------- | -------------------------------------------- |
+| <img src="img/alerting1.jpeg" width = "200"> | <img src="img/alerting2.jpeg" width = "200"> |
 
 # 백엔드 서버
 
-|                   Server Stack                   |
-| :----------------------------------------------: |
-| ![Server Stack](/img/algorithm/server_stack.png) |
+|                                                Server Stack                                                |
+| :--------------------------------------------------------------------------------------------------------: |
+| ![Server Stack](https://github.com/Ajou-Soft-19/epas/assets/32717522/5837f8b6-4c52-444e-b17b-011b92733479) |
 
 백엔드 서버는 다음과 같은 기술 스택을 사용합니다. WAS는 Spring Boot를 사용하고, DB는 PostgrSQL와 Redis를 사용합니다. 또한, 서버 간 통신을 위해 REST API와 Redis Pub/Sub을 사용합니다.
 
@@ -575,20 +578,20 @@ EPAS 클라이언트 디바이스는 큰 컴퓨팅 파워가 필요하지 않으
 
 소스코드는 이 링크에서 확인할 수 있습니다: [EPAS-Embeded-Client](https://github.com/Ajou-Soft-19/EPAS-Client/blob/main/embedded/gsc_node_mcu.ino)
 
-|                                                EPAS 회로 구성                                            |             EPAS Client Divice Prototype               |
-| :------------------------------------------------------------------------------------------------: | :----------------------------------------------: |
+|                                                                                          EPAS 회로 구성                                                                                          |                                                                                        EPAS Client Divice Prototype                                                                                        |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/Ajou-Soft-19/EPAS-Embeded-Client/assets/32717522/db2253ca-8453-4697-8732-e4e98be4027a" alt="EPAS" style="display: block; margin-left: auto; margin-right: auto;" /> | <img src="https://github.com/Ajou-Soft-19/EPAS-Client/assets/32717522/ec86e577-3862-43d4-927b-14db2f0a534d" alt="Additional Information" style="display: block; margin-left: auto; margin-right: auto;" /> |
 
 위 사진은 개발된 EPAS 클라이언트 디바이스의 프로토타입 사진입니다. 이 디바이스에 사용된 하드웨어는 아래와 같습니다.
 
-| 번호 | 이름             | 수량 | 가격 (USD) |
-|------|----------------------|------|------------|
-| 1    | NodeMCU V3           | 1    | $1.8       |
-| 2    | GPS 모듈 (Neo-7M)     | 1    | $5.7       |
-| 3    | LCD (16x2)           | 1    | $1.0       |
-| 4    | DFPlayer Mini        | 1    | $0.8       |
-| 5    | Speaker              | 1    | $1.3       |
-| 6    | Micro SD 카드(16GB)   | 1    | $3.0       |
+| 번호 | 이름                | 수량 | 가격 (USD) |
+| ---- | ------------------- | ---- | ---------- |
+| 1    | NodeMCU V3          | 1    | $1.8       |
+| 2    | GPS 모듈 (Neo-7M)   | 1    | $5.7       |
+| 3    | LCD (16x2)          | 1    | $1.0       |
+| 4    | DFPlayer Mini       | 1    | $0.8       |
+| 5    | Speaker             | 1    | $1.3       |
+| 6    | Micro SD 카드(16GB) | 1    | $3.0       |
 
 **총 비용 : 약 $13.6**
 
@@ -596,8 +599,8 @@ EPAS 클라이언트 디바이스는 큰 컴퓨팅 파워가 필요하지 않으
 
 ### 동작 방식
 
-| EPAS 경고 메시지 출력 |
-| :-------------------: |
+|                                                       EPAS 경고 메시지 출력                                                        |
+| :--------------------------------------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/Ajou-Soft-19/EPAS-Embeded-Client/assets/32717522/4702b382-53fd-4043-834f-7d6f8b6fdb7e" width="700px"> |
 
 - 응급 차량 경고 발행 시 **응급차량의 라이선스 번호**, **응급차량의 접근 방향**과 **주위 응급차량 수**를 출력합니다.
@@ -625,8 +628,8 @@ EPAS 시스템을 사회 기반 시스템에 도입한다면 값싼 비용으로
 
 저희 팀은 EPAS를 더 많은 사람들이 사용하도록 유도하기 위해 EPAS Social Rewarding System을 개발하였습니다. 이를 통해 지역별로 EPAS를 사용하는 사람들을 카운팅할 수 있고, 사용자들의 선의의 경쟁을 유도해 더 많은 사람들이 EPAS를 사용하도록 할 수 있습니다.
 
-| EPAS Social Rewarding System1 | EPAS Social Rewarding System2 | EPAS Social Rewarding System3 |
-| :--------------------------: | :--------------------------: | :--------------------------: |
+|                                     EPAS Social Rewarding System1                                     |                                     EPAS Social Rewarding System2                                     |                                     EPAS Social Rewarding System3                                     |
+| :---------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/4bcb2caa-0a3a-429c-bfb0-6e03fc9b979b"> | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/459218a8-f8b7-4bc5-83ed-839efae5e41b"> | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/14191736-ec43-475d-9ef6-666865dd3296"> |
 
 EPAS Social Rewarding System은 응급차량이 응급상황에서 운행 중일 때 주변의 차량에게 알림이 간 기록을 통해 카운팅합니다. 이를 통해 사용자들은 자신의 지역 또는 다른 지역에서 EPAS를 사용하는 사람들이 많다는 것을 알 수 있고, 더 많은 사람들이 EPAS를 사용하도록 유도할 수 있습니다.
@@ -637,9 +640,9 @@ EPAS Social Rewarding System도 구글맵 API를 사용하기 때문에 지도 �
 
 ## EPAS API Plugin화
 
-| EPAS API Documentation Example | EPAS API Documentation Example |
-| :---------------------: | :---------------------: |
-| <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/ece5cd5c-d23d-4958-b0a0-94374cef753c"> | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/81365216-7733-4d71-ad59-c9bad3e8057b">
+|                                    EPAS API Documentation Example                                     |                                    EPAS API Documentation Example                                     |
+| :---------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
+| <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/ece5cd5c-d23d-4958-b0a0-94374cef753c"> | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/81365216-7733-4d71-ad59-c9bad3e8057b"> |
 
 EPAS를 더 많은 사람들이 사용할 수 있게 하기 위해 EPAS API를 정리하고 사용법을 자세히 설명한 문서를 작성해 개발자들이 쉽게 EPAS를 사용할 수 있게 했습니다. 이를 통해 EPAS 앱뿐만 아니라 다른 어플리케이션에서도 EPAS를 사용할 수 있어 더 많은 사람들이 EPAS 시스템을 사용할 수 있습니다.
 
@@ -657,8 +660,8 @@ EPAS의 일반 사용자 API에 대한 자세한 내용은 [Ordinary User Applic
 
 ## EPAS 어플리케이션 최적화
 
-| EPAS Mentoring |
-| :-------------------: |
+|                                                   EPAS Mentoring                                                    |
+| :-----------------------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/Ajou-Soft-19/epas/assets/32717522/b5900fdf-dc4e-4d41-a9a6-5f51c4fd140b" width="700px"> |
 
 구글 멘토링을 통해 EPAS 어플리케이션의 신뢰성을 개선하였습니다. 기존에는 어플리케이션이 백그라운드에서 소켓 통신을 제대로 컨트롤하지 못 해 사용자의 이전 위치 정보가 그대로 유지되는 문제가 있었습니다. 지난 제출에서는 서버에서 주기적으로 더 이상 메시지를 보내지 않는 세션을 종료하도록 수정하였습니다.
