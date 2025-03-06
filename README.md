@@ -2,6 +2,26 @@
 
 Korean version Documentation: [한국어 문서](./README_KR.md)
 
+## GDSC 2024 TOP 100 Awarded
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/61570f9a-f7d5-45e0-ab03-0ba2790da4ad" alt="TOP 100" style="height:150px; vertical-align:middle; margin-right:10px;">
+  <img src="https://github.com/user-attachments/assets/fba5397a-1034-4d09-86fd-f8be4b9b859e" alt="TOP 100" style="height:150px; vertical-align:middle;">
+</div>
+
+## Project Introduction Video
+
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=fXNNaIofH3A">
+    <img src="https://github.com/user-attachments/assets/4345e1e5-33f0-4cee-b2b3-147b3269bb0b" alt="EPAS Intro GIF" style="height:300px;">
+  </a>
+  <br>
+  <a href="https://www.youtube.com/watch?v=fXNNaIofH3A" style="text-decoration:none; color:#0073e6; font-weight:bold;">
+    <img src="https://img.shields.io/badge/WATCH%20PROJECT%20INTRO%20VIDEO-FF0000?style=for-the-badge&logo=YouTube&logoColor=white" alt="Watch Video">
+  </a>
+</div>
+
+
 ## How to run and test EPAS
 
 To run and test EPAS, please refer to the following **[link](./docs/test.md)**.
