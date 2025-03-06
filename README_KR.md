@@ -14,7 +14,7 @@
     <img src="https://github.com/user-attachments/assets/4345e1e5-33f0-4cee-b2b3-147b3269bb0b" alt="EPAS 소개 GIF" style="height:300px;">
   </a>
   <br>
-  <a href="https://www.youtube.com/watch?v=fXNNaIofH3A" style="text-decoration:none; color:#0073e6; font-weight:bold;">
+  <a href="https://www.youtube.com/watch?v=fXNNaIofH3A" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:#0073e6; font-weight:bold;">
     <img src="https://img.shields.io/badge/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%86%8C%EA%B0%9C%20%EC%98%81%EC%83%81%20%EB%B3%B4%EB%9F%AC%EA%B0%80%EA%B8%B0-FF0000?style=for-the-badge&logo=YouTube&logoColor=white" alt="영상 보러가기">
   </a>
 </div>

@@ -16,7 +16,7 @@ Korean version Documentation: [한국어 문서](./README_KR.md)
     <img src="https://github.com/user-attachments/assets/4345e1e5-33f0-4cee-b2b3-147b3269bb0b" alt="EPAS Intro GIF" style="height:300px;">
   </a>
   <br>
-  <a href="https://www.youtube.com/watch?v=fXNNaIofH3A" style="text-decoration:none; color:#0073e6; font-weight:bold;">
+  <a href="https://www.youtube.com/watch?v=fXNNaIofH3A" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:#0073e6; font-weight:bold;">
     <img src="https://img.shields.io/badge/WATCH%20PROJECT%20INTRO%20VIDEO-FF0000?style=for-the-badge&logo=YouTube&logoColor=white" alt="Watch Video">
   </a>
 </div>
