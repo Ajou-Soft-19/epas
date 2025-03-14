@@ -143,7 +143,7 @@ English version Documentation: [EN Docs](./README_EN.md)
 
 |                 맵 매칭 사용 전                  |                 맵 매칭 사용 후                  |
 | :----------------------------------------------: | :----------------------------------------------: |
-| <img src="./img/algorithm/before_map_match.jpg"> | <img src="./img/algorithm/before_map_match.jpg"> |
+| <img src="./img/algorithm/before_map_match.jpg"> | <img src="./img/algorithm/after_map_match.jpg"> |
 
 이를 통해 응급차량이 어떤 체크포인트를 지나가고 있는지, 어떤 도로를 통과하고 있는지 등을 정확하게 파악할 수 있습니다. 여기서 구한 도로 네트워크 상의 위치와 방위각을 이용해 경고 대상을 선정하고 경고 메시지를 전송합니다.
 
